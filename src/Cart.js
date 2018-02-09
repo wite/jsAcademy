@@ -21,4 +21,6 @@ module.exports = function Cart() {
 			return item.getPrice() >= 20;
 		});
 	}
+
+	this.getAllProductNames = () => this.items.map(item => item.getName());
 };

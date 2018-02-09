@@ -53,4 +53,19 @@ describe('Cart', function () {
 		// then
 		expect(result).toBe(expectedResult)
 	});
+
+    it('should return names of all products', function () {
+        // given
+        var cart = new Cart();
+        cart.add(new ShoppingItem('apple', 3, 10));
+        cart.add(new ShoppingItem('banana', 2, 20));
+        cart.add(new ShoppingItem('carrot', 1, 5));
+        var expectedResult = ['apple', 'banana', 'carrot'];
+
+        // when
+        var result = cart.getAllProductNames();
+
+        // then
+        expect(result).toEqual(expectedResult)
+    });
 });
